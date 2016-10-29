@@ -14,10 +14,4 @@ class TestConsoleHuman < Minitest::Test
 		assert_equal(true, [0,1,2,3,4,5,6,7,8].include?(move))
 	end
 
-	# def test_invalid_move_out_of_range
-	# 	player = Human.new("x")
-	# 	move + player.get_move(["x","", "", "", "", "", "", "", ""])
-	# 	assert_equal(false, )
-	# end
-
 end
