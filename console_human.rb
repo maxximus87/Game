@@ -1,22 +1,20 @@
-require_relative "board.rb"
-
 class Human
-	attr_accessor	:marker
+	attr_reader :marker
 
 	def initialize(marker)
-		@marker = marker		
+		@marker = marker
 	end
 
-	
 	def get_move(board)
-		puts "Player #{marker}, pick a position 1 through 9."
-		move = gets.chomp.to_i
-		move = move - 1
-			if board[move] == ""		
-				move
-			else
-				puts "Try again, pick a VALID position."
-				get_move(board)
-			end
+		puts "Make a move"
+		move = gets.chomp.to_i - 1
+
+		if board[move] == ""
+			move
+		else
+			puts "Spot already taken."
+			get_move(board)
+		end
 	end
+		
 end
