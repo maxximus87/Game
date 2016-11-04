@@ -1,4 +1,4 @@
-class UnbeatableAi
+f class UnbeatableAi
 	attr_reader :marker
 
 	def initialize(marker)
@@ -11,6 +11,17 @@ class UnbeatableAi
 	end
 
 	def winning_move(player)
+		WINNING_SPACES.each do |space|
+			WINNING_PRIORITIES.each do |priority|
+				if (@board.tiles[space[priority[0]]] == player) && (@board.tiles[space[priority[1]]] == player)
+					next_space = space[priority[2]]
+					if @board.space_available? next_space
+						return next_space
+					end
+				end
+			end
+		end
+		return nil
 		
 end
 
